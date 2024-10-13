@@ -19,18 +19,31 @@ or "your answer is not correct".
 
 #include <iostream>
 #include <random>
+#include <time.h>
 using namespace std;
 
 int main()
 {
 	int random1, random2, answer;
+	double guess;
+	srand(time(NULL));
 	random1 = rand() % 1000;
 	random2 = rand() % 1000;
 	answer = random1 + random2;
 
 
-	cout << " " << random1 << endl << "+" << random2 << endl << "------";
-	cin.get();
-	cout << " " << answer;
+	cout << " " << random1 << endl << "+" << random2 << endl << "------"<<endl;
+	cout << "Please input your answer:";
+	cin >> guess;
+	
+	if (guess == answer)
+	{
+		cout << "You are correct";
+	}
+	else
+	{
+		cout << "Your answer is not correct";
+	}
+	
 }
 
